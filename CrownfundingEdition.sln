@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrownFundingWEBAPI", "CrownFundingWEBAPI\CrownFundingWEBAPI.csproj", "{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrownFundingEdition.Administrateur", "CrownFundingEdition.Administrateur\CrownFundingEdition.Administrateur.csproj", "{9464B9D4-454C-4C77-A890-1F7BE9BED4BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F486EFAB-199D-4CF3-92B5-9D4F47569DD6} = {F486EFAB-199D-4CF3-92B5-9D4F47569DD6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrownFundingEdition.Administrateur.Client", "CrownFundingEdition.Administrateur.Client\CrownFundingEdition.Administrateur.Client.csproj", "{9FA8C3F3-4F3E-4994-834B-E85344E04B25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrownFundingEdition.Administrateur.MVVM", "CrownFundingEdition.Administrateur.MVVM\CrownFundingEdition.Administrateur.MVVM.csproj", "{FEB8C6D1-4983-4B7B-8C48-23332BD29C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBox", "..\C#\ToolBox\ToolBox\ToolBox.csproj", "{C9AA9674-0A62-47A6-8C55-29506D6445B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9464B9D4-454C-4C77-A890-1F7BE9BED4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9464B9D4-454C-4C77-A890-1F7BE9BED4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9464B9D4-454C-4C77-A890-1F7BE9BED4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9464B9D4-454C-4C77-A890-1F7BE9BED4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA8C3F3-4F3E-4994-834B-E85344E04B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA8C3F3-4F3E-4994-834B-E85344E04B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA8C3F3-4F3E-4994-834B-E85344E04B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA8C3F3-4F3E-4994-834B-E85344E04B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB8C6D1-4983-4B7B-8C48-23332BD29C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB8C6D1-4983-4B7B-8C48-23332BD29C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB8C6D1-4983-4B7B-8C48-23332BD29C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB8C6D1-4983-4B7B-8C48-23332BD29C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9AA9674-0A62-47A6-8C55-29506D6445B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9AA9674-0A62-47A6-8C55-29506D6445B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9AA9674-0A62-47A6-8C55-29506D6445B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9AA9674-0A62-47A6-8C55-29506D6445B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://thundereditioncrownfunding.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CrownFundingWEBAPI\\CrownFundingWEBAPI.csproj
+		SccProjectName1 = CrownFundingWEBAPI
+		SccLocalPath1 = CrownFundingWEBAPI
+		SccProjectUniqueName2 = CrownFundingEdition.ASPSite\\CrownFundingEdition.ASPSite.csproj
+		SccProjectName2 = CrownFundingEdition.ASPSite
+		SccLocalPath2 = CrownFundingEdition.ASPSite
+		SccProjectUniqueName3 = CrownFundingEdition.Administrateur\\CrownFundingEdition.Administrateur.csproj
+		SccProjectName3 = CrownFundingEdition.Administrateur
+		SccLocalPath3 = CrownFundingEdition.Administrateur
+		SccProjectUniqueName4 = CrownFundingEdition.Administrateur.Client\\CrownFundingEdition.Administrateur.Client.csproj
+		SccProjectName4 = CrownFundingEdition.Administrateur.Client
+		SccLocalPath4 = CrownFundingEdition.Administrateur.Client
+		SccProjectUniqueName5 = CrownFundingEdition.Administrateur.MVVM\\CrownFundingEdition.Administrateur.MVVM.csproj
+		SccProjectName5 = CrownFundingEdition.Administrateur.MVVM
+		SccLocalPath5 = CrownFundingEdition.Administrateur.MVVM
+		SccProjectUniqueName6 = ..\\..\\..\\..\\Desktop\\SQLDBCrown\\ToolBox\\ToolBox\\ToolBox.csproj
+		SccProjectName6 = ToolBox1
+		SccLocalPath6 = ..\\..\\..\\..\\Desktop\\SQLDBCrown\\ToolBox\\ToolBox
+		SccProjectUniqueName7 = Repository\\Repository.csproj
+		SccProjectName7 = Repository
+		SccLocalPath7 = Repository
+	EndGlobalSection
+EndGlobal

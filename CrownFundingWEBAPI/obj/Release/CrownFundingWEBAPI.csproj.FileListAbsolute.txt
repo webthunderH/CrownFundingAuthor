@@ -1,0 +1,1 @@
+c:\users\forma310\documents\visual studio 2015\Projects\CrownfundingEdition\CrownFundingWEBAPI\obj\Release\CrownFundingWEBAPI.csprojResolveAssemblyReference.cache

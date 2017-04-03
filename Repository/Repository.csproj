@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E064B6C5-84D1-4BA4-A1AE-4F34A1D360FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Repository</RootNamespace>
+    <AssemblyName>Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global\CategorieDeProjet.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Contrat_Utilisateur.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\CrownFundingEdition.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrownFundingEdition.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\CrownFundingEdition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\CrownFundingEdition.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrownFundingEdition.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Dons.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Montant.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\NewsLetter.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Notation.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Participations.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Projet.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\PSListAuteurByCategoryPrincAndSec_Result.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\PSListAuteurByType_Result.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\PSListeProjetByAuteur_Result.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\PSListeProjetByCategory_Result.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\PSListeProjetByType_Result.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\ReponseSondage.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Sondage.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Specialisation_ProjetPrincipal.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Specialisation_ProjetSecondaire.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\TypeDeContrat.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\TypeDeProjet.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Utilisateur.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VAllUtilisateur.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VAll_Auteur.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VAll_Projet.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VAuteurOrUtil.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VQuesAuteur.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VTotalByProjet.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VTotalCrownByProject.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VTotalDonByProject.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\VUtilNewsLetter.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global\V_AllCrown.cs">
+      <DependentUpon>CrownFundingEdition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mappers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceAppUser.cs" />
+    <Compile Include="Services\ServiceAuteur.cs" />
+    <Compile Include="Services\ServiceCategorie.cs" />
+    <Compile Include="Services\ServiceDons.cs" />
+    <Compile Include="Services\ServiceNewsLetter.cs" />
+    <Compile Include="Services\ServiceNotation.cs" />
+    <Compile Include="Services\ServiceParticipation.cs" />
+    <Compile Include="Services\ServiceProjet.cs" />
+    <Compile Include="Services\ServiceTypeDeProjet.cs" />
+    <Compile Include="Services\ServiceUtilisateur.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="Global\CrownFundingEdition.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CrownFundingEdition.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Global\CrownFundingEdition.edmx.diagram">
+      <DependentUpon>CrownFundingEdition.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global\CrownFundingEdition.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CrownFundingEdition.edmx</DependentUpon>
+      <LastGenOutput>CrownFundingEdition.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Global\CrownFundingEdition.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CrownFundingEdition.edmx</DependentUpon>
+      <LastGenOutput>CrownFundingEdition.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

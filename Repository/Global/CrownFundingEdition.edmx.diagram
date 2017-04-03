@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8ea38b56e6542ba8822a4f61ba0b051" Name="Diagram1">
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.CategorieDeProjet" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Contrat_Utilisateur" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Dons" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Montant" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.NewsLetter" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Notation" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Participations" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Projet" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.ReponseSondage" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Sondage" Width="1.5" PointX="3.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Specialisation_ProjetPrincipal" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Specialisation_ProjetSecondaire" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.TypeDeContrat" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.TypeDeProjet" Width="1.5" PointX="3.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.Utilisateur" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.V_AllCrown" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VAll_Auteur" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VAll_Projet" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VAllUtilisateur" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VAuteurOrUtil" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VQuesAuteur" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VTotalByProjet" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VTotalCrownByProject" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VTotalDonByProject" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Crownfunding_EditionModel.VUtilNewsLetter" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Specia_Cate" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_SpeciaSec_Cate" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Contrat_TypeDeContrat" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Contrat_Utili" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Dons_Projet" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Dons_Utili" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Montant_Projet" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Particip_Montant" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Note_Projet" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Note_Utili" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Particip_Utili" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Pro_TypePro" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Pro_Utili" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_Specia_Projet" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_SpeciaSec_Projet" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_RepSond_Sondage" ManuallyRouted="false" />
+        <AssociationConnector Association="Crownfunding_EditionModel.FK_RepSond_Utilisateur" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

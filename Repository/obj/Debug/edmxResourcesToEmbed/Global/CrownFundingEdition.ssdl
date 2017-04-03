@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Crownfunding_EditionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategorieDeProjet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Restriction" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contrat_Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdContrat" Type="int" />
+    <Property Name="IdUtilisateur" Type="int" />
+  </EntityType>
+  <EntityType Name="Dons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" />
+    <Property Name="IdProjet" Type="int" />
+    <Property Name="DateDons" Type="date" Nullable="false" />
+    <Property Name="Montant" Type="int" Nullable="false" />
+    <Property Name="Communication" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Montant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prix" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdProjet" Type="int" />
+  </EntityType>
+  <EntityType Name="NewsLetter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateDeLinformation" Type="date" Nullable="false" />
+    <Property Name="TexteInformatif" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" />
+    <Property Name="IdProjet" Type="int" />
+    <Property Name="Note" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Participations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" />
+    <Property Name="IdMontant" Type="int" />
+    <Property Name="DateParticipation" Type="date" Nullable="false" />
+    <Property Name="Communication" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sous_Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Resume" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fichier" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="RecolteDesire" Type="int" Nullable="false" />
+    <Property Name="DateDebut" Type="date" Nullable="false" />
+    <Property Name="DateFin" Type="date" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" />
+    <Property Name="IdTypeProjet" Type="int" />
+    <Property Name="Historique" Type="bit" />
+  </EntityType>
+  <EntityType Name="ReponseSondage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSondage" Type="int" Nullable="false" />
+    <Property Name="IdUtilisateur" Type="int" Nullable="false" />
+    <Property Name="Reponse" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sondage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Resultat" Type="int" />
+  </EntityType>
+  <EntityType Name="Specialisation_ProjetPrincipal">
+    <Key>
+      <PropertyRef Name="IdPrincpal" />
+    </Key>
+    <Property Name="IdPrincpal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProjet" Type="int" />
+    <Property Name="IdCategorie" Type="int" />
+  </EntityType>
+  <EntityType Name="Specialisation_ProjetSecondaire">
+    <Key>
+      <PropertyRef Name="IdSecondaire" />
+    </Key>
+    <Property Name="IdSecondaire" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProjet" Type="int" />
+    <Property Name="IdCategorie" Type="int" />
+  </EntityType>
+  <EntityType Name="TypeDeContrat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Limite_Projet" Type="int" Nullable="false" />
+    <Property Name="Prix" Type="int" />
+  </EntityType>
+  <EntityType Name="TypeDeProjet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Page_Min" Type="int" Nullable="false" />
+    <Property Name="Page_Max" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pseudo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateDeNaissance" Type="date" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Pays" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Compte_bancaire" Type="nvarchar" MaxLength="30" />
+    <Property Name="Ad_Rue" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ad_Ville" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ad_Code_Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ad_Numero" Type="int" Nullable="false" />
+    <Property Name="NewsLetter" Type="bit" Nullable="false" />
+    <Property Name="SecretKey" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="IsActif" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.V_AllCrown' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="V_AllCrown">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VAll_Auteur' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VAll_Auteur">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Pays" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pseudo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="DateNaissance" Type="nvarchar" MaxLength="20" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="183" />
+    <Property Name="Pays" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Compte_bancaire" Type="nvarchar" MaxLength="30" />
+    <Property Name="Contrat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Statut" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VAll_Projet' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VAll_Projet">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Titre" />
+      <PropertyRef Name="Sous_Titre" />
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="DateDebut" />
+      <PropertyRef Name="DateFin" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sous_Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pseudo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateDebut" Type="date" Nullable="false" />
+    <Property Name="DateFin" Type="date" Nullable="false" />
+    <Property Name="Historique" Type="bit" />
+    <Property Name="Statut" Type="varchar" MaxLength="13" />
+    <Property Name="J'aime" Type="int" />
+    <Property Name="Je n'aime Pas" Type="int" />
+    <Property Name="Total Dons" Type="int" />
+    <Property Name="Total Crownfunding" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VAllUtilisateur' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VAllUtilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="DateDeNaissance" />
+      <PropertyRef Name="Pays" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pseudo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="DateDeNaissance" Type="date" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="183" />
+    <Property Name="Pays" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Compte_bancaire" Type="nvarchar" MaxLength="30" />
+    <Property Name="Statut" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VAuteurOrUtil' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VAuteurOrUtil">
+    <Key>
+      <PropertyRef Name="UtilisateurId" />
+    </Key>
+    <Property Name="UtilisateurId" Type="int" Nullable="false" />
+    <Property Name="ProjetId" Type="int" />
+    <Property Name="Statut" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VQuesAuteur' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VQuesAuteur">
+    <Key>
+      <PropertyRef Name="UtilisateurId" />
+    </Key>
+    <Property Name="UtilisateurId" Type="int" Nullable="false" />
+    <Property Name="ProjetId" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VTotalByProjet' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VTotalByProjet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VTotalCrownByProject' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VTotalCrownByProject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VTotalDonByProject' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VTotalDonByProject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Crownfunding_Edition.dbo.VUtilNewsLetter' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="VUtilNewsLetter">
+    <Key>
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Contrat_TypeDeContrat">
+    <End Role="TypeDeContrat" Type="Self.TypeDeContrat" Multiplicity="0..1" />
+    <End Role="Contrat_Utilisateur" Type="Self.Contrat_Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeDeContrat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contrat_Utilisateur">
+        <PropertyRef Name="IdContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrat_Utili">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Contrat_Utilisateur" Type="Self.Contrat_Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contrat_Utilisateur">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dons_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Dons" Type="Self.Dons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dons">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dons_Utili">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Dons" Type="Self.Dons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dons">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Montant_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Montant" Type="Self.Montant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Montant">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Note_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Notation" Type="Self.Notation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notation">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Note_Utili">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Notation" Type="Self.Notation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notation">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Particip_Montant">
+    <End Role="Montant" Type="Self.Montant" Multiplicity="0..1" />
+    <End Role="Participations" Type="Self.Participations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Montant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Participations">
+        <PropertyRef Name="IdMontant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Particip_Utili">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Participations" Type="Self.Participations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Participations">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pro_TypePro">
+    <End Role="TypeDeProjet" Type="Self.TypeDeProjet" Multiplicity="0..1" />
+    <End Role="Projet" Type="Self.Projet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeDeProjet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="IdTypeProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pro_Utili">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="Projet" Type="Self.Projet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RepSond_Sondage">
+    <End Role="Sondage" Type="Self.Sondage" Multiplicity="1" />
+    <End Role="ReponseSondage" Type="Self.ReponseSondage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sondage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReponseSondage">
+        <PropertyRef Name="IdSondage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RepSond_Utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="1" />
+    <End Role="ReponseSondage" Type="Self.ReponseSondage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReponseSondage">
+        <PropertyRef Name="IdUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specia_Cate">
+    <End Role="CategorieDeProjet" Type="Self.CategorieDeProjet" Multiplicity="0..1" />
+    <End Role="Specialisation_ProjetPrincipal" Type="Self.Specialisation_ProjetPrincipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategorieDeProjet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Specialisation_ProjetPrincipal">
+        <PropertyRef Name="IdCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specia_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Specialisation_ProjetPrincipal" Type="Self.Specialisation_ProjetPrincipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Specialisation_ProjetPrincipal">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpeciaSec_Cate">
+    <End Role="CategorieDeProjet" Type="Self.CategorieDeProjet" Multiplicity="0..1" />
+    <End Role="Specialisation_ProjetSecondaire" Type="Self.Specialisation_ProjetSecondaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategorieDeProjet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Specialisation_ProjetSecondaire">
+        <PropertyRef Name="IdCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpeciaSec_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Specialisation_ProjetSecondaire" Type="Self.Specialisation_ProjetSecondaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Specialisation_ProjetSecondaire">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="PSDeleteAuteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUtilisateur" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSListAuteurByCategoryPrincAndSec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCategory" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSListAuteurByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSListeProjetByAuteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSListeProjetByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCategory" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSListeProjetByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSNotation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUtili" Type="int" Mode="In" />
+    <Parameter Name="IdProjet" Type="int" Mode="In" />
+    <Parameter Name="Note" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUtilisateur" Type="int" Mode="In" />
+    <Parameter Name="IdProjet" Type="int" Mode="In" />
+    <Parameter Name="DateDons" Type="date" Mode="In" />
+    <Parameter Name="Montant" Type="int" Mode="In" />
+    <Parameter Name="Communication" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauProjetInfoSup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AutoIncrementP" Type="int" Mode="In" />
+    <Parameter Name="IdUtilisateur" Type="int" Mode="In" />
+    <Parameter Name="CatPrinc" Type="int" Mode="In" />
+    <Parameter Name="CatSec" Type="int" Mode="In" />
+    <Parameter Name="IdContrat" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauSondage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageMin" Type="int" Mode="In" />
+    <Parameter Name="PageMax" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauTypeContrat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="LimiteProjet" Type="int" Mode="In" />
+    <Parameter Name="Prix" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSNouveauUtilisateur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="Prenom" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pseudo" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateDeNaissance" Type="date" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pays" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompteBancaire" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ad_Rue" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ad_Ville" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ad_Code_Post" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ad_Numero" Type="int" Mode="In" />
+    <Parameter Name="NewsLetter" Type="bit" Mode="In" />
+    <Parameter Name="SecretKey" Type="varbinary" Mode="In" />
+  </Function>
+  <Function Name="PSNouvelleCategorie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom" Type="nvarchar" Mode="In" />
+    <Parameter Name="Restriction" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="ntext" Mode="In" />
+  </Function>
+  <Function Name="PSNouvelleParticipation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUtilisateur" Type="int" Mode="In" />
+    <Parameter Name="IdMontant" Type="int" Mode="In" />
+    <Parameter Name="DateParticipation" Type="date" Mode="In" />
+    <Parameter Name="Communication" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PSPassageProjetHisto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProjet" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PSReponseSondage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSondage" Type="int" Mode="In" />
+    <Parameter Name="IdUtilisateur" Type="int" Mode="In" />
+    <Parameter Name="Reponse" Type="bit" Mode="In" />
+  </Function>
+  <EntityContainer Name="Crownfunding_EditionModelStoreContainer">
+    <EntitySet Name="CategorieDeProjet" EntityType="Self.CategorieDeProjet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contrat_Utilisateur" EntityType="Self.Contrat_Utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dons" EntityType="Self.Dons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Montant" EntityType="Self.Montant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsLetter" EntityType="Self.NewsLetter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notation" EntityType="Self.Notation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Participations" EntityType="Self.Participations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projet" EntityType="Self.Projet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReponseSondage" EntityType="Self.ReponseSondage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sondage" EntityType="Self.Sondage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialisation_ProjetPrincipal" EntityType="Self.Specialisation_ProjetPrincipal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialisation_ProjetSecondaire" EntityType="Self.Specialisation_ProjetSecondaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeDeContrat" EntityType="Self.TypeDeContrat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeDeProjet" EntityType="Self.TypeDeProjet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_AllCrown" EntityType="Self.V_AllCrown" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_AllCrown].[Id] AS [Id], 
+    [V_AllCrown].[Total] AS [Total]
+    FROM [dbo].[V_AllCrown] AS [V_AllCrown]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VAll_Auteur" EntityType="Self.VAll_Auteur" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VAll_Auteur].[Id] AS [Id], 
+    [VAll_Auteur].[Nom] AS [Nom], 
+    [VAll_Auteur].[Prenom] AS [Prenom], 
+    [VAll_Auteur].[Pseudo] AS [Pseudo], 
+    [VAll_Auteur].[Password] AS [Password], 
+    [VAll_Auteur].[DateNaissance] AS [DateNaissance], 
+    [VAll_Auteur].[Adresse] AS [Adresse], 
+    [VAll_Auteur].[Pays] AS [Pays], 
+    [VAll_Auteur].[Email] AS [Email], 
+    [VAll_Auteur].[Compte_bancaire] AS [Compte_bancaire], 
+    [VAll_Auteur].[Contrat] AS [Contrat], 
+    [VAll_Auteur].[Statut] AS [Statut]
+    FROM [dbo].[VAll_Auteur] AS [VAll_Auteur]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VAll_Projet" EntityType="Self.VAll_Projet" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VAll_Projet].[Id] AS [Id], 
+    [VAll_Projet].[Titre] AS [Titre], 
+    [VAll_Projet].[Sous_Titre] AS [Sous_Titre], 
+    [VAll_Projet].[Nom] AS [Nom], 
+    [VAll_Projet].[Prenom] AS [Prenom], 
+    [VAll_Projet].[Pseudo] AS [Pseudo], 
+    [VAll_Projet].[DateDebut] AS [DateDebut], 
+    [VAll_Projet].[DateFin] AS [DateFin], 
+    [VAll_Projet].[Historique] AS [Historique], 
+    [VAll_Projet].[Statut] AS [Statut], 
+    [VAll_Projet].[J'aime] AS [J'aime], 
+    [VAll_Projet].[Je n'aime Pas] AS [Je n'aime Pas], 
+    [VAll_Projet].[Total Dons] AS [Total Dons], 
+    [VAll_Projet].[Total Crownfunding] AS [Total Crownfunding]
+    FROM [dbo].[VAll_Projet] AS [VAll_Projet]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VAllUtilisateur" EntityType="Self.VAllUtilisateur" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VAllUtilisateur].[Id] AS [Id], 
+    [VAllUtilisateur].[Nom] AS [Nom], 
+    [VAllUtilisateur].[Prenom] AS [Prenom], 
+    [VAllUtilisateur].[Pseudo] AS [Pseudo], 
+    [VAllUtilisateur].[Password] AS [Password], 
+    [VAllUtilisateur].[DateDeNaissance] AS [DateDeNaissance], 
+    [VAllUtilisateur].[Adresse] AS [Adresse], 
+    [VAllUtilisateur].[Pays] AS [Pays], 
+    [VAllUtilisateur].[Email] AS [Email], 
+    [VAllUtilisateur].[Compte_bancaire] AS [Compte_bancaire], 
+    [VAllUtilisateur].[Statut] AS [Statut]
+    FROM [dbo].[VAllUtilisateur] AS [VAllUtilisateur]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VAuteurOrUtil" EntityType="Self.VAuteurOrUtil" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VAuteurOrUtil].[UtilisateurId] AS [UtilisateurId], 
+    [VAuteurOrUtil].[ProjetId] AS [ProjetId], 
+    [VAuteurOrUtil].[Statut] AS [Statut]
+    FROM [dbo].[VAuteurOrUtil] AS [VAuteurOrUtil]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VQuesAuteur" EntityType="Self.VQuesAuteur" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VQuesAuteur].[UtilisateurId] AS [UtilisateurId], 
+    [VQuesAuteur].[ProjetId] AS [ProjetId]
+    FROM [dbo].[VQuesAuteur] AS [VQuesAuteur]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VTotalByProjet" EntityType="Self.VTotalByProjet" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VTotalByProjet].[Id] AS [Id], 
+    [VTotalByProjet].[Total] AS [Total]
+    FROM [dbo].[VTotalByProjet] AS [VTotalByProjet]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VTotalCrownByProject" EntityType="Self.VTotalCrownByProject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VTotalCrownByProject].[Id] AS [Id], 
+    [VTotalCrownByProject].[Total] AS [Total]
+    FROM [dbo].[VTotalCrownByProject] AS [VTotalCrownByProject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VTotalDonByProject" EntityType="Self.VTotalDonByProject" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VTotalDonByProject].[Id] AS [Id], 
+    [VTotalDonByProject].[Total] AS [Total]
+    FROM [dbo].[VTotalDonByProject] AS [VTotalDonByProject]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VUtilNewsLetter" EntityType="Self.VUtilNewsLetter" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VUtilNewsLetter].[Nom] AS [Nom], 
+    [VUtilNewsLetter].[Prenom] AS [Prenom], 
+    [VUtilNewsLetter].[Email] AS [Email]
+    FROM [dbo].[VUtilNewsLetter] AS [VUtilNewsLetter]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Contrat_TypeDeContrat" Association="Self.FK_Contrat_TypeDeContrat">
+      <End Role="TypeDeContrat" EntitySet="TypeDeContrat" />
+      <End Role="Contrat_Utilisateur" EntitySet="Contrat_Utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrat_Utili" Association="Self.FK_Contrat_Utili">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Contrat_Utilisateur" EntitySet="Contrat_Utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dons_Projet" Association="Self.FK_Dons_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Dons" EntitySet="Dons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dons_Utili" Association="Self.FK_Dons_Utili">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Dons" EntitySet="Dons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Montant_Projet" Association="Self.FK_Montant_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Montant" EntitySet="Montant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Note_Projet" Association="Self.FK_Note_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Notation" EntitySet="Notation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Note_Utili" Association="Self.FK_Note_Utili">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Notation" EntitySet="Notation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Particip_Montant" Association="Self.FK_Particip_Montant">
+      <End Role="Montant" EntitySet="Montant" />
+      <End Role="Participations" EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Particip_Utili" Association="Self.FK_Particip_Utili">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Participations" EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pro_TypePro" Association="Self.FK_Pro_TypePro">
+      <End Role="TypeDeProjet" EntitySet="TypeDeProjet" />
+      <End Role="Projet" EntitySet="Projet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pro_Utili" Association="Self.FK_Pro_Utili">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="Projet" EntitySet="Projet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RepSond_Sondage" Association="Self.FK_RepSond_Sondage">
+      <End Role="Sondage" EntitySet="Sondage" />
+      <End Role="ReponseSondage" EntitySet="ReponseSondage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RepSond_Utilisateur" Association="Self.FK_RepSond_Utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="ReponseSondage" EntitySet="ReponseSondage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specia_Cate" Association="Self.FK_Specia_Cate">
+      <End Role="CategorieDeProjet" EntitySet="CategorieDeProjet" />
+      <End Role="Specialisation_ProjetPrincipal" EntitySet="Specialisation_ProjetPrincipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specia_Projet" Association="Self.FK_Specia_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Specialisation_ProjetPrincipal" EntitySet="Specialisation_ProjetPrincipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpeciaSec_Cate" Association="Self.FK_SpeciaSec_Cate">
+      <End Role="CategorieDeProjet" EntitySet="CategorieDeProjet" />
+      <End Role="Specialisation_ProjetSecondaire" EntitySet="Specialisation_ProjetSecondaire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpeciaSec_Projet" Association="Self.FK_SpeciaSec_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Specialisation_ProjetSecondaire" EntitySet="Specialisation_ProjetSecondaire" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

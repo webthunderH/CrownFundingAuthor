@@ -1,0 +1,16 @@
+﻿<Application x:Class="CrownFundingEdition.Administrateur.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CrownFundingEdition.Administrateur"
+             xmlns:vm="clr-namespace:CrownFundingEdition.Administrateur.MVVM;assembly=CrownFundingEdition.Administrateur.MVVM"
+             xmlns:pro="clr-namespace:CrownFundingEdition.Administrateur.MVVM.Projet;assembly=CrownFundingEdition.Administrateur.MVVM"
+             xmlns:ut="clr-namespace:CrownFundingEdition.Administrateur.MVVM.Utilisateur;assembly=CrownFundingEdition.Administrateur.MVVM"
+             xmlns:typ="clr-namespace:CrownFundingEdition.Administrateur.MVVM.TypeDeProjet;assembly=CrownFundingEdition.Administrateur.MVVM"
+             xmlns:cat="clr-namespace:CrownFundingEdition.Administrateur.MVVM.Categorie;assembly=CrownFundingEdition.Administrateur.MVVM"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+   
+            <ut:AllUtilisateurVM x:Key="AllUser"/>
+
+    </Application.Resources>
+</Application>

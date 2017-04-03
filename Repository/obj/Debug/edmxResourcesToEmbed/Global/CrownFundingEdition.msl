@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Crownfunding_EditionModelStoreContainer" CdmEntityContainer="Crownfunding_EditionEntities">
+    <EntitySetMapping Name="CategorieDeProjet">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.CategorieDeProjet">
+        <MappingFragment StoreEntitySet="CategorieDeProjet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Restriction" ColumnName="Restriction" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contrat_Utilisateur">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Contrat_Utilisateur">
+        <MappingFragment StoreEntitySet="Contrat_Utilisateur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdContrat" ColumnName="IdContrat" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dons">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Dons">
+        <MappingFragment StoreEntitySet="Dons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="DateDons" ColumnName="DateDons" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Montant">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Montant">
+        <MappingFragment StoreEntitySet="Montant">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsLetter">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.NewsLetter">
+        <MappingFragment StoreEntitySet="NewsLetter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateDeLinformation" ColumnName="DateDeLinformation" />
+          <ScalarProperty Name="TexteInformatif" ColumnName="TexteInformatif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notation">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Notation">
+        <MappingFragment StoreEntitySet="Notation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Participations">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Participations">
+        <MappingFragment StoreEntitySet="Participations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="IdMontant" ColumnName="IdMontant" />
+          <ScalarProperty Name="DateParticipation" ColumnName="DateParticipation" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projet">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Projet">
+        <MappingFragment StoreEntitySet="Projet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Sous_Titre" ColumnName="Sous_Titre" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Fichier" ColumnName="Fichier" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="RecolteDesire" ColumnName="RecolteDesire" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="IdTypeProjet" ColumnName="IdTypeProjet" />
+          <ScalarProperty Name="Historique" ColumnName="Historique" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReponseSondage">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.ReponseSondage">
+        <MappingFragment StoreEntitySet="ReponseSondage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdSondage" ColumnName="IdSondage" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="Reponse" ColumnName="Reponse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sondage">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Sondage">
+        <MappingFragment StoreEntitySet="Sondage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Resultat" ColumnName="Resultat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialisation_ProjetPrincipal">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Specialisation_ProjetPrincipal">
+        <MappingFragment StoreEntitySet="Specialisation_ProjetPrincipal">
+          <ScalarProperty Name="IdPrincpal" ColumnName="IdPrincpal" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialisation_ProjetSecondaire">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Specialisation_ProjetSecondaire">
+        <MappingFragment StoreEntitySet="Specialisation_ProjetSecondaire">
+          <ScalarProperty Name="IdSecondaire" ColumnName="IdSecondaire" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeDeContrat">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.TypeDeContrat">
+        <MappingFragment StoreEntitySet="TypeDeContrat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Limite_Projet" ColumnName="Limite_Projet" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeDeProjet">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.TypeDeProjet">
+        <MappingFragment StoreEntitySet="TypeDeProjet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Page_Min" ColumnName="Page_Min" />
+          <ScalarProperty Name="Page_Max" ColumnName="Page_Max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="DateDeNaissance" ColumnName="DateDeNaissance" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+          <ScalarProperty Name="Compte_bancaire" ColumnName="Compte_bancaire" />
+          <ScalarProperty Name="Ad_Rue" ColumnName="Ad_Rue" />
+          <ScalarProperty Name="Ad_Ville" ColumnName="Ad_Ville" />
+          <ScalarProperty Name="Ad_Code_Post" ColumnName="Ad_Code_Post" />
+          <ScalarProperty Name="Ad_Numero" ColumnName="Ad_Numero" />
+          <ScalarProperty Name="NewsLetter" ColumnName="NewsLetter" />
+          <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+          <ScalarProperty Name="IsActif" ColumnName="IsActif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_AllCrown">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.V_AllCrown">
+        <MappingFragment StoreEntitySet="V_AllCrown">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAll_Auteur">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VAll_Auteur">
+        <MappingFragment StoreEntitySet="VAll_Auteur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Compte_bancaire" ColumnName="Compte_bancaire" />
+          <ScalarProperty Name="Contrat" ColumnName="Contrat" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAll_Projet">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VAll_Projet">
+        <MappingFragment StoreEntitySet="VAll_Projet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Sous_Titre" ColumnName="Sous_Titre" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Historique" ColumnName="Historique" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="J_aime" ColumnName="J'aime" />
+          <ScalarProperty Name="Je_n_aime_Pas" ColumnName="Je n'aime Pas" />
+          <ScalarProperty Name="Total_Dons" ColumnName="Total Dons" />
+          <ScalarProperty Name="Total_Crownfunding" ColumnName="Total Crownfunding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAllUtilisateur">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VAllUtilisateur">
+        <MappingFragment StoreEntitySet="VAllUtilisateur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DateDeNaissance" ColumnName="DateDeNaissance" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Compte_bancaire" ColumnName="Compte_bancaire" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAuteurOrUtil">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VAuteurOrUtil">
+        <MappingFragment StoreEntitySet="VAuteurOrUtil">
+          <ScalarProperty Name="UtilisateurId" ColumnName="UtilisateurId" />
+          <ScalarProperty Name="ProjetId" ColumnName="ProjetId" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VQuesAuteur">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VQuesAuteur">
+        <MappingFragment StoreEntitySet="VQuesAuteur">
+          <ScalarProperty Name="UtilisateurId" ColumnName="UtilisateurId" />
+          <ScalarProperty Name="ProjetId" ColumnName="ProjetId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VTotalByProjet">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VTotalByProjet">
+        <MappingFragment StoreEntitySet="VTotalByProjet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VTotalCrownByProject">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VTotalCrownByProject">
+        <MappingFragment StoreEntitySet="VTotalCrownByProject">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VTotalDonByProject">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VTotalDonByProject">
+        <MappingFragment StoreEntitySet="VTotalDonByProject">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VUtilNewsLetter">
+      <EntityTypeMapping TypeName="Crownfunding_EditionModel.VUtilNewsLetter">
+        <MappingFragment StoreEntitySet="VUtilNewsLetter">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PSListAuteurByCategoryPrincAndSec" FunctionName="Crownfunding_EditionModel.Store.PSListAuteurByCategoryPrincAndSec">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Crownfunding_EditionModel.PSListAuteurByCategoryPrincAndSec_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PSListAuteurByType" FunctionName="Crownfunding_EditionModel.Store.PSListAuteurByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Crownfunding_EditionModel.PSListAuteurByType_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="Historique" ColumnName="Historique" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PSListeProjetByAuteur" FunctionName="Crownfunding_EditionModel.Store.PSListeProjetByAuteur">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Crownfunding_EditionModel.PSListeProjetByAuteur_Result">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PSListeProjetByCategory" FunctionName="Crownfunding_EditionModel.Store.PSListeProjetByCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Crownfunding_EditionModel.PSListeProjetByCategory_Result">
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="J_aime" ColumnName="J'aime" />
+          <ScalarProperty Name="Je_n_aime_Pas" ColumnName="Je n'aime Pas" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Historique" ColumnName="Historique" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PSListeProjetByType" FunctionName="Crownfunding_EditionModel.Store.PSListeProjetByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Crownfunding_EditionModel.PSListeProjetByType_Result">
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="J_aime" ColumnName="J'aime" />
+          <ScalarProperty Name="Je_n_aime_Pas" ColumnName="Je n'aime Pas" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Historique" ColumnName="Historique" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PSNotation" FunctionName="Crownfunding_EditionModel.Store.PSNotation" />
+    <FunctionImportMapping FunctionImportName="PSNouveauDon" FunctionName="Crownfunding_EditionModel.Store.PSNouveauDon" />
+    <FunctionImportMapping FunctionImportName="PSNouveauProjetInfoSup" FunctionName="Crownfunding_EditionModel.Store.PSNouveauProjetInfoSup" />
+    <FunctionImportMapping FunctionImportName="PSNouveauSondage" FunctionName="Crownfunding_EditionModel.Store.PSNouveauSondage" />
+    <FunctionImportMapping FunctionImportName="PSNouveauType" FunctionName="Crownfunding_EditionModel.Store.PSNouveauType" />
+    <FunctionImportMapping FunctionImportName="PSNouveauTypeContrat" FunctionName="Crownfunding_EditionModel.Store.PSNouveauTypeContrat" />
+    <FunctionImportMapping FunctionImportName="PSNouveauUtilisateur" FunctionName="Crownfunding_EditionModel.Store.PSNouveauUtilisateur" />
+    <FunctionImportMapping FunctionImportName="PSNouvelleCategorie" FunctionName="Crownfunding_EditionModel.Store.PSNouvelleCategorie" />
+    <FunctionImportMapping FunctionImportName="PSNouvelleParticipation" FunctionName="Crownfunding_EditionModel.Store.PSNouvelleParticipation" />
+    <FunctionImportMapping FunctionImportName="PSPassageProjetHisto" FunctionName="Crownfunding_EditionModel.Store.PSPassageProjetHisto" />
+    <FunctionImportMapping FunctionImportName="PSReponseSondage" FunctionName="Crownfunding_EditionModel.Store.PSReponseSondage" />
+    <FunctionImportMapping FunctionImportName="PSDeleteAuteur" FunctionName="Crownfunding_EditionModel.Store.PSDeleteAuteur" />
+  </EntityContainerMapping>
+</Mapping>

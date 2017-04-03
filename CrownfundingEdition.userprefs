@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{F486EFAB-199D-4CF3-92B5-9D4F47569DD6}|">
+  <MonoDevelop.Ide.ItemProperties.CrownFundingWEBAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../C#/ToolBox/ToolBox/HttpRequest/httpRequester.cs">
+    <Files>
+      <File FileName="../C#/ToolBox/ToolBox/HttpRequest/httpRequester.cs" Line="170" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>../../../../Desktop/SQLDBCrown/ToolBox/ToolBox/ToolBox.csproj</String>
+  </DisabledProjects>
+</Properties>

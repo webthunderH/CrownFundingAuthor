@@ -1,0 +1,46 @@
+﻿<Window x:Class="CrownFundingEdition.Administrateur.Windows.Utilisateur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrownFundingEdition.Administrateur.Windows"
+        mc:Ignorable="d"
+        Title="Utilisateur" Height="300" Width="450">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" RowBackground="LightGreen" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" CanUserReorder="False" IsReadOnly="True" Width="Auto" />
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Width="20*" />
+                <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" Width="20*" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Width="40*" />
+                <DataGridTextColumn Header="Statut" Binding="{Binding Statut, UpdateSourceTrigger=PropertyChanged}" Width="50*"/>
+                <DataGridTemplateColumn Header="Naissance">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DateNaiss, StringFormat=dd-MM-yyyy}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DateNaiss, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Mettre à jour" Command="{Binding UpdateCommand}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Supprimer" Command="{Binding DeleteCommand}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
